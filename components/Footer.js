@@ -2,18 +2,18 @@ export const Footer = () => {
   return (
     <div className="mt-24">
       <div className="flex max-w-screen-2xl mx-auto" id="footer">
-        <div className="w-1/2 flex justify-center ">
+        <div className="w-1/2 hidden  lg:flex justify-center ">
           <iframe
             className="w-2/3 h-3/4 rounded-3xl"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
             id="gmap_canvas"
             src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Huree%20University%20of%20ICT,%20WVGM+HH3,%20Ulaanbaatar%20Ulan%20Bator+(Huree%20University%20of%20ICT)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>
         </div>
-        <div className="bg-[#2A35A7] w-1/2 rounded-t-[72px] -mt-40">
+        <div className="bg-[#2A35A7] lg:w-1/2 w-full rounded-t-[72px] -mt-40">
           <div className=" flex text-white space-x-5 ml-6 mt-6">
             <img
               className="h-full"

@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <>
       <div className="md:flex max-w-screen-2xl mx-auto shadow-lg" id="home">
-        <div className="2xl:h-[795px] xl:h-[670px] lg:h-[620px]  md:w-2/3 w-full  h-[400px] bg-[#153690]">
+        <div className="2xl:h-[795px] xl:h-[670px] lg:h-[620px]  lg:w-2/3 w-full  h-[400px] bg-[#153690]">
           <div className="lg:ml-8 xl:mr-[150px] lg:mr-[60px]  lg:pt-8">
             <Navbar />
           </div>
@@ -68,7 +68,7 @@ export default function Header() {
             />
           </div>
         </div>
-        <div className="hidden md:block w-1/3 text-xs overflow-auto">
+        <div className="hidden lg:block w-1/3 text-xs overflow-auto">
           <div className="flex justify-around items-center mt-3 ">
             <ul className="flex space-x-4  ">
               <li className="flex items-center">

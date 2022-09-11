@@ -1,7 +1,6 @@
-@import url('  https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 @tailwind base;
-
 @tailwind components;
 @tailwind utilities;
 
@@ -9,3 +8,23 @@
 html {
     scroll-behavior: smooth;
 }
+
+
+
+@media only screen and (max-width: 385px) {
+    .ant-drawer-content-wrapper {
+        width: 90% !important;
+    }
+}
+.ant-collapse{
+    background-color: transparent;
+    border: 0;
+   
+  }
+  .ant-collapse-content{
+    background-color: transparent;
+    border-bottom: 0;
+  }
+  .ant-collapse-item {
+   border-bottom: 0;
+  }

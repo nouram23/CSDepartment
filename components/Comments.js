@@ -23,9 +23,9 @@ const Comments = () => {
     },
   ];
   return (
-    <div className="bg-[#F5F5F5] pt-20 pb-36">
-      <div className="flex flex-col max-w-3xl mx-auto ">
-        <h1 className="text-center text-xl mb-8">Төгсөгчдийн сэтгэгдэл</h1>
+    <div className="bg-[#F5F5F5] md:pt-20 sm:pt-12  pt-6 pb-36 px-7">
+      <div className="flex flex-col md:max-w-3xl mx-auto ">
+        <h1 className="text-center text-xl md:mb-8">Төгсөгчдийн сэтгэгдэл</h1>
         <Slider
           autoplay
           dots={false}
@@ -37,13 +37,17 @@ const Comments = () => {
           {comments.map((el, i) => (
             <Card key={i}>
               <div className="flex flex-col items-center">
-                <div className="font-bold text-lg">{el.star}.0</div>
-                <div className="mb-6">
+                <div className="font-bold text-base sm:text-lg">
+                  {el.star}.0
+                </div>
+                <div className="mb-6 text-xs">
                   <Rate disabled count={5} defaultValue={el.star} />
                 </div>
-                <div>{el.body}</div>
+                <div className="text-xs sm:text-base">{el.body}</div>
               </div>
-              <div className=" flex justify-end  mt-5 mr-10">{el.name}</div>
+              <div className=" flex justify-end  mt-5 mr-10 text-xs sm:text-base">
+                {el.name}
+              </div>
             </Card>
           ))}
         </Slider>

@@ -9,26 +9,28 @@ const text = `
 
 export default function CommonQuestions() {
   return (
-    <div className="max-w-6xl flex mx-auto py-40 px-10 justify-between shadow-xl ">
-      <div className="w-1/2 flex justify-center items-center relative">
-        <div className="h-14 top-24 right-20 absolute">
-          <img className="h-full" src={"/images/Ellipse 10.png"} alt="" />
-        </div>
-        <div className="h-44 top-40 left-0 absolute">
-          <img className="h-full" src={"/images/Ellipse 11.png"} alt="" />
+    <div className="max-w-6xl flex mx-auto lg:pt-20 py-6 lg:pb-28   lg:px-10 px-4 justify-between lg:flex-row flex-col shadow-xl ">
+      <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+        <div className="hidden lg:block">
+          <div className="h-14 top-24 right-20 absolute">
+            <img className="h-full" src={"/images/Ellipse 10.png"} alt="" />
+          </div>
+          <div className="h-44 top-40 left-0 absolute">
+            <img className="h-full" src={"/images/Ellipse 11.png"} alt="" />
+          </div>
         </div>
 
-        <p className="text-2xl ">Нийтлэг асуулт</p>
+        <p className="text-2xl z-50">Нийтлэг асуулт</p>
       </div>
-      <div className="w-1/2 relative">
-        <div className="h-10 -top-10 right-64 absolute">
+      <div className="w-full lg:w-1/2 relative ">
+        <div className="hidden lg:block h-10 -top-10 right-64 absolute">
           <img className="h-full" src={"/images/Ellipse 12.png"} alt="" />
         </div>
         <Collapse
           accordion
           defaultActiveKey={["1"]}
           bordered={false}
-          expandIconPosition="right"
+          expandIconPosition="end"
         >
           <Panel header="Хэзээ элсэлт авдаг вэ?" key="1">
             <p>{text}</p>
