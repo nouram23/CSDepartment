@@ -1,3 +1,4 @@
+import { BackTop } from "antd";
 import "antd/dist/antd.css";
 import AboutUs from "../components/AboutUs";
 import Comments from "../components/Comments";
@@ -6,6 +7,7 @@ import { Footer } from "../components/Footer";
 import Goals from "../components/Goals";
 
 import Header from "../components/Header";
+import NewsBlog from "../components/NewsBlog";
 export default function App() {
   return (
     <>
@@ -14,7 +16,9 @@ export default function App() {
       <Goals />
       <CommonQuestions />
       <Comments />
+      <NewsBlog />
       <Footer />
+      <BackTop />
     </>
   );
 }

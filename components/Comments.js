@@ -23,7 +23,7 @@ const Comments = () => {
     },
   ];
   return (
-    <div className="bg-[#F5F5F5] md:pt-20 sm:pt-12  pt-6 pb-36 px-7">
+    <div className="bg-[#F5F5F5] md:pt-20 sm:pt-12  pt-6 pb-28 px-7">
       <div className="flex flex-col md:max-w-3xl mx-auto ">
         <h1 className="text-center text-xl md:mb-8">Төгсөгчдийн сэтгэгдэл</h1>
         <Slider

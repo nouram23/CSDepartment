@@ -13,7 +13,7 @@ html {
 
 @media only screen and (max-width: 385px) {
     .ant-drawer-content-wrapper {
-        width: 90% !important;
+        width: 85% !important;
     }
 }
 .ant-collapse{
@@ -28,3 +28,31 @@ html {
   .ant-collapse-item {
    border-bottom: 0;
   }
+
+  .slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    
+   
+}
+.slick-prev:before,
+.slick-next:before
+{
+    font-size: 25px !important;
+    line-height: 1;
+   
+    opacity: .75;
+    color: #2A35A7 !important;
+
+    
+}

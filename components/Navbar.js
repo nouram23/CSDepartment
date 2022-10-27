@@ -15,7 +15,7 @@ export default function Navbar(props) {
     setOpen(false);
   };
   return (
-    <div className=" justify-between flex w-full h-14 lg:h-16 p-2 ">
+    <div className=" justify-between flex w-full h-14 lg:h-16 p-2  ">
       <div className=" flex text-white ">
         <img
           className="h-full"
@@ -60,24 +60,30 @@ export default function Navbar(props) {
               </p>
             </div>
           }
-          placement="left"
+          placement="right"
           onClose={onClose}
           open={open}
         >
           <ul className="flex text-black flex-col space-y-3">
             <li className="cursor-pointer">
               <Link href="#">
-                <a className="text-black">Нүүр</a>
+                <a onClick={onClose} className="text-black">
+                  Нүүр
+                </a>
               </Link>
             </li>
-            <li className="cursor-pointer">
+            <li className="cursor-pointer  w-full">
               <Link href="#about">
-                <a className="text-black">Танилцуулагa</a>
+                <a onClick={onClose} className="text-black ">
+                  Танилцуулагa
+                </a>
               </Link>
             </li>
             <li className="cursor-pointer ">
               <Link href="#goal">
-                <a className="text-black">Үйл ажиллагаа </a>
+                <a onClick={onClose} className="text-black">
+                  Үйл ажиллагаа{" "}
+                </a>
               </Link>
             </li>
           </ul>
