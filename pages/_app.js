@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import "antd/dist/antd.css";
+import { BackTop } from "antd";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <div className="font-Roboto">
+      <Component {...pageProps} />
+      <BackTop />
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;

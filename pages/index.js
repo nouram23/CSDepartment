@@ -1,5 +1,4 @@
 import { BackTop } from "antd";
-import "antd/dist/antd.css";
 import AboutUs from "../components/AboutUs";
 import Comments from "../components/Comments";
 import CommonQuestions from "../components/CommonQuestions";
@@ -8,17 +7,27 @@ import Goals from "../components/Goals";
 
 import Header from "../components/Header";
 import NewsBlog from "../components/NewsBlog";
-export default function App() {
+import { getAllComments, getCommonQuestions } from "../lib/api";
+import { getLastPosts } from "../lib/api";
+export default function App({ comments, lastPosts, commonQuestions }) {
   return (
     <>
       <Header />
       <AboutUs />
       <Goals />
-      <CommonQuestions />
-      <Comments />
-      <NewsBlog />
+      <CommonQuestions commonQuestions={commonQuestions} />
+      <Comments comments={comments} />
+      <NewsBlog lastPosts={lastPosts} />
       <Footer />
-      <BackTop />
     </>
   );
 }
+export const getStaticProps = async () => {
+  // buh comment
+  const comments = await getAllComments();
+  //suuliin 4n post
+  const lastPosts = await getLastPosts();
+  //ehnii 5n niitleg asuult awcirna
+  const commonQuestions = await getCommonQuestions();
+  return { props: { comments, lastPosts, commonQuestions } };
+};

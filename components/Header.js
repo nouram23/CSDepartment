@@ -21,9 +21,9 @@ import Navbar from "./Navbar";
 export default function Header() {
   return (
     <>
-      <div className="md:flex max-w-screen-2xl mx-auto shadow-lg" id="home">
+      <div className="md:flex max-w-screen-2xl mx-auto shadow-lg " id="home">
         <div className="2xl:h-[795px] xl:h-[670px] lg:h-[620px]  lg:w-2/3 w-full  h-[400px] bg-[#153690]">
-          <div className="lg:ml-8 xl:mr-[150px] lg:mr-[60px]  lg:pt-8">
+          <div className="lg:ml-8 xl:mr-[150px] lg:mr-[60px] px-2 ">
             <Navbar />
           </div>
           <div className=" flex w-full h-full justify-center   text-white  relative">
@@ -93,6 +93,7 @@ export default function Header() {
             <ul className="flex space-x-4">
               <li>
                 <a
+                  rel="noopener noreferrer"
                   href="https://www.facebook.com/hureecssedepartment/"
                   target="_blank"
                 >

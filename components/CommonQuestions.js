@@ -1,13 +1,16 @@
-import { Collapse } from "antd";
+import { Button, Collapse, Modal } from "antd";
+import { useState } from "react";
 
 const { Panel } = Collapse;
 
-const text = `
-  A dog is a type of domesticated animal.
-  
-`;
+export default function CommonQuestions({ commonQuestions }) {
+  const [tmp, setTmp] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-export default function CommonQuestions() {
+  const readMore = (e) => {
+    setTmp(e);
+    setIsModalOpen(true);
+  };
   return (
     <div className="max-w-6xl flex mx-auto lg:pt-20 py-6 lg:pb-28   lg:px-10 px-4 justify-between lg:flex-row flex-col shadow-xl ">
       <div className="w-full lg:w-1/2 flex justify-center items-center relative">
@@ -28,30 +31,34 @@ export default function CommonQuestions() {
         </div>
         <Collapse
           accordion
-          defaultActiveKey={["1"]}
+          defaultActiveKey={["0"]}
           bordered={false}
           expandIconPosition="end"
         >
-          <Panel header="Хэзээ элсэлт авдаг вэ?" key="1">
-            <p>{text}</p>
-          </Panel>
-          <Panel header="Хэзээ элсэлт авдаг вэ?" key="2">
-            <p>{text}</p>
-          </Panel>
-          <Panel header="Оюутан солилцооны талаарх мэдээлэл?" key="3">
-            <p>{text}</p>
-          </Panel>
-          <Panel
-            header="Энэ сургуульд элссэнээр ямар ур чадвар эзэмших вэ?"
-            key="4"
-          >
-            <p>{text}</p>
-          </Panel>
-          <Panel header="Арван жилээ хаана төгссөн бэ?" key="5">
-            <p>{text}</p>
-          </Panel>
+          {commonQuestions?.map((e, i) => (
+            <Panel header={e.question} key={i}>
+              <p>
+                {e.answer.length > 30 ? (
+                  <Button type="text" onClick={() => readMore(e)}>
+                    {e.answer.substring(0, 20)}...{" "}
+                    <span className="ml-1 font-medium">дэлгэрэнгүй</span>
+                  </Button>
+                ) : (
+                  e.answer
+                )}
+              </p>
+            </Panel>
+          ))}
         </Collapse>
       </div>
+      <Modal
+        title={tmp?.question}
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={false}
+      >
+        <p>{tmp.answer}</p>
+      </Modal>
     </div>
   );
 }

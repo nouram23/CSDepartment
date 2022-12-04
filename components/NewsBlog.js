@@ -1,80 +1,98 @@
-import { Card, Col, Row } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import Link from "next/link";
 
-export default function NewsBlog(params) {
+import { urlFor } from "../lib/api";
+import moment from "moment";
+
+export default function NewsBlog({ lastPosts }) {
   return (
-    <div className="bg-[#F5F5F5]">
-      <div className=" mx-auto max-w-screen-xl pb-36 pt-10 ">
+    <div className="bg-[#F5F5F5]" id="news">
+      <div className=" mx-auto max-w-screen-xl pb-36  md:px-20 sm:px-14 px-8">
+        <Row className="mb-3 ">
+          <Button className="bg-[#2A35A7]" href="/news" shape="round">
+            Мэдээ&Блог
+          </Button>
+        </Row>
         <Row gutter={[40, 0]}>
-          <Col span={16}>
-            <Row>
-              <Link href={"/"}>
-                <Card style={{ borderRadius: 15 }} className="w-full">
-                  <Row>
+          <Col xl={16}>
+            <div>
+              <Link href={`/news/${lastPosts[0].slug.current}`}>
+                <Card
+                  style={{ borderRadius: 15 }}
+                  className="w-full hidden lg:block cursor-pointer"
+                >
+                  <Row gutter={[40, 0]}>
                     <Col span={12}>
                       <img
-                        className="rounded-lg"
-                        //   src={props.allPostData[3].mainImage.asset.url}
+                        className="rounded-lg mx-auto"
+                        src={urlFor(lastPosts[0].mainImage).height(200)}
                         alt="mainImage"
                       />
                     </Col>
                     <Col span={12}>
-                      <h2 className="text-base">
-                        “МУИС- Хакатон 2022” оюутны санаачилгын уралдааны
-                        бүртгэл эхэллээ
+                      <h2 className="text-base font-medium">
+                        {lastPosts[0].title}
                       </h2>
-                      <p>
-                        МУИС-ийн оюутан залуусын дунд “МУИС-аас гарааны бизнес”
-                        уриатай шинэ санаа, санаачилгыг шалгаруулах. Энэхүү
-                        уралдааныг бидний амьдралд тулгамдаж буй асуудлыг
-                        шинэлэг арга....
-                      </p>
-                      <div className="text-[#777181]">2022.02.24</div>
+                      <p>{lastPosts[0].description}</p>
+                      <div className="text-[#777181]">
+                        {moment(lastPosts[0].publishedAt).format("YYYY.MM.DD")}
+                      </div>
                     </Col>
                   </Row>
                 </Card>
               </Link>
-            </Row>
-            <Row gutter={[40, 0]} className="mt-10">
-              <Col span={12}>
-                <Link href={"/"}>
+            </div>
+
+            <Row gutter={[40, 0]} className="lg:mt-10">
+              <Col md={12}>
+                <Link href={`/news/${lastPosts[1].slug.current}`}>
                   <Card style={{ borderRadius: 15 }}>
                     <div>
                       <img
                         className="rounded-lg"
-                        //   src={props.allPostData[2].mainImage.asset.url}
+                        src={urlFor(lastPosts[1].mainImage).height(200)}
                         alt="mainImage"
                       />
                       <div className="mt-6">
-                        <h2>
-                          We make it simple to find, apply and enroll at the
-                          most suitable university abroad
-                        </h2>
-                        <p>Jeffrey Adams</p>
+                        <p className="font-medium text-base">
+                          {lastPosts[1].title}
+                        </p>
+
+                        <p>{lastPosts[1].author}</p>
                         {/* <p>California University of Pennsylvania</p> */}
-                        <div className="text-[#777181]">2022.02.24 </div>
+                        <div className="text-[#777181]">
+                          {" "}
+                          {moment(lastPosts[1].publishedAt).format(
+                            "YYYY.MM.DD"
+                          )}
+                        </div>
                       </div>
                     </div>
                   </Card>
                 </Link>
               </Col>
-              <Col span={12}>
-                <Link href={"/"}>
+              <Col md={12} className="mt-6 md:mt-0">
+                <Link href={`/news/${lastPosts[2].slug.current}`}>
                   <Card style={{ borderRadius: 15 }}>
                     <div>
                       <img
                         className="rounded-lg"
-                        //   src={props.allPostData[2].mainImage.asset.url}
+                        src={urlFor(lastPosts[2].mainImage).height(200)}
                         alt="mainImage"
                       />
                       <div className="mt-6">
-                        <h2>
-                          We make it simple to find, apply and enroll at the
-                          most suitable university abroad
-                        </h2>
-                        <p>Jeffrey Adams</p>
+                        <p className="font-medium  text-base">
+                          {lastPosts[2].title}
+                        </p>
+
+                        <p>{lastPosts[2].author}</p>
                         {/* <p>California University of Pennsylvania</p> */}
-                        <div className="text-[#777181]">2022.02.24 </div>
+                        <div className="text-[#777181]">
+                          {" "}
+                          {moment(lastPosts[2].publishedAt).format(
+                            "YYYY.MM.DD"
+                          )}
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -82,23 +100,26 @@ export default function NewsBlog(params) {
               </Col>
             </Row>
           </Col>
-          <Col span={8}>
-            <Link href={"/"}>
+          <Col xl={8} className="hidden lg:block">
+            <Link href={`/news/${lastPosts[3].slug.current}`}>
               <Card style={{ borderRadius: 15 }} className="h-full">
                 <div className="flex flex-col items-center">
                   <img
                     className="rounded-lg"
-                    //   src={props.allPostData[2].mainImage.asset.url}
+                    src={urlFor(lastPosts[3].mainImage).height(200)}
                     alt="mainImage"
                   />
                   <div className="mt-6">
-                    <h2>
-                      We make it simple to find, apply and enroll at the most
-                      suitable university abroad
+                    <h2 className="font-medium text-base">
+                      {lastPosts[3].title}
                     </h2>
-                    <p>Jeffrey Adams</p>
-                    <p>California University of Pennsylvania</p>
-                    <div className="text-[#777181]">2022.02.24 </div>
+                    <p className="mt-10">{lastPosts[3].description}</p>
+                    <div className="">
+                      <p>{lastPosts[3].author}</p>
+                      <div className="text-[#777181]">
+                        {moment(lastPosts[3].publishedAt).format("YYYY.MM.DD")}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>

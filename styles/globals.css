@@ -13,7 +13,7 @@ html {
 
 @media only screen and (max-width: 385px) {
     .ant-drawer-content-wrapper {
-        width: 85% !important;
+        width: 75% !important;
     }
 }
 .ant-collapse{
